@@ -308,6 +308,91 @@
                         android:background="#8c8c8c"
                         app:layout_constraintTop_toBottomOf="@id/image1" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <ImageView
+                        android:id="@+id/image"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/street"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:id="@+id/edit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#a1a1a1"
+                        app:layout_constraintTop_toBottomOf="@id/image">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/line"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:textColor="#3f4040"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:textSize="20sp"
+                            android:layout_gravity="center"
+                            android:text="You've reached the end. Keep exploring!"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/line"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/t6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/edit"
+                        android:layout_marginTop="5dp"
+                        android:text="Explore Departments"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/t6" />
+
+                    <TextView
+                        android:id="@+id/t7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/rv4"
+                        android:text="All Departments"
+                        android:textSize="17sp"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="#00a6f8"/>
+
+                    <EditText
+                        android:id="@+id/et6"
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:background="#8c8c8c"
+                        app:layout_constraintTop_toBottomOf="@id/t7" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
