@@ -11,10 +11,12 @@ import com.example.a561j.Adapter.Rv1Adapter;
 import com.example.a561j.Adapter.Rv2Adapter;
 import com.example.a561j.Adapter.RvAdapter;
 import com.example.a561j.Adapter.RvAdapter3;
+import com.example.a561j.Adapter.RvAdapter4;
 import com.example.a561j.Models.ItemRv;
 import com.example.a561j.Models.ItemRv1;
 import com.example.a561j.Models.ItemRv2;
 import com.example.a561j.Models.ItemRv3;
+import com.example.a561j.Models.ItemRv4;
 
 import java.util.ArrayList;
 
@@ -29,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         initViews1();
         initViews2();
         initViews3();
+        initViews4();
     }
 
     void initViews(){
@@ -124,4 +127,27 @@ public class MainActivity extends AppCompatActivity {
         return chats;
     }
 
+    void initViews4(){
+        recyclerView = findViewById(R.id.rv4);
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+
+        refreshAdapter4(getAllChats4());
+    }
+
+    void refreshAdapter4(ArrayList<ItemRv4> chats){
+        RvAdapter4 adapter = new RvAdapter4(this, chats);
+        recyclerView.setAdapter(adapter);
+    }
+
+    ArrayList<ItemRv4> getAllChats4() {
+        ArrayList<ItemRv4> chats = new ArrayList<>();
+
+        chats.add(new ItemRv4(R.drawable.mbw, "Beauty"));
+        chats.add(new ItemRv4(R.drawable.birds, "Home and Kitchen"));
+        chats.add(new ItemRv4(R.drawable.rut, "Sports and Outdoors"));
+        chats.add(new ItemRv4(R.drawable.street, "Electronics"));
+        chats.add(new ItemRv4(R.drawable.rut, "Outdoor clothing"));
+        chats.add(new ItemRv4(R.drawable.street, "Pet Supplies"));
+        return chats;
+    }
 }
