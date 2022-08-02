@@ -10,9 +10,11 @@ import android.os.Bundle;
 import com.example.a561j.Adapter.Rv1Adapter;
 import com.example.a561j.Adapter.Rv2Adapter;
 import com.example.a561j.Adapter.RvAdapter;
+import com.example.a561j.Adapter.RvAdapter3;
 import com.example.a561j.Models.ItemRv;
 import com.example.a561j.Models.ItemRv1;
 import com.example.a561j.Models.ItemRv2;
+import com.example.a561j.Models.ItemRv3;
 
 import java.util.ArrayList;
 
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         initViews();
         initViews1();
         initViews2();
+        initViews3();
     }
 
     void initViews(){
@@ -98,4 +101,27 @@ public class MainActivity extends AppCompatActivity {
 
         return chats;
     }
+
+    void initViews3(){
+        recyclerView = findViewById(R.id.rv3);
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 1 ));
+
+        refreshAdapter3(getAllChats3());
+    }
+
+    void refreshAdapter3(ArrayList<ItemRv3> chats){
+        RvAdapter3 adapter = new RvAdapter3(this, chats);
+        recyclerView.setAdapter(adapter);
+    }
+
+    ArrayList<ItemRv3> getAllChats3() {
+        ArrayList<ItemRv3> chats = new ArrayList<>();
+
+        chats.add(new ItemRv3(R.drawable.birds, "Chika Chika Boom Boom", "4", "59","$7.99"));
+        chats.add(new ItemRv3(R.drawable.rut, "Clean Code", "25", "60",""));
+        chats.add(new ItemRv3(R.drawable.mbw, "Pattern Architecture", "30", "10", "$80.05"));
+
+        return chats;
+    }
+
 }
